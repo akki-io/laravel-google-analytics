@@ -11,6 +11,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             -   uses: actions/checkout@v2
+            -   name: Decrypt large secret
+                run: ./.github/scripts/decrypt_secret.sh
+                env:
+                    LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
             -   name: Start the test docker containers
                 run: docker-compose -f docker-compose-test.yml up -d
             -   name: Install composer dependencies
@@ -21,6 +25,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             -   uses: actions/checkout@v2
+            -   name: Decrypt large secret
+                run: ./.github/scripts/decrypt_secret.sh
+                env:
+                    LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
             -   name: Start the test docker containers
                 run: docker-compose -f docker-compose-test.yml up -d
             -   name: Install composer dependencies
@@ -31,6 +39,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             -   uses: actions/checkout@v2
+            -   name: Decrypt large secret
+                run: ./.github/scripts/decrypt_secret.sh
+                env:
+                    LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
             -   name: Start the test docker containers
                 run: docker-compose -f docker-compose-test.yml up -d
             -   name: Install composer dependencies

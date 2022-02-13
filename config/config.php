@@ -9,5 +9,5 @@ return [
     /*
      * Path to the client secret json file.
      */
-    'service_account_credentials_json' => env('GOOGLE_CREDENTIAL_JSON_FILE_ABSOLUTE_PATH', storage_path('app/analytics/service-account-credentials.json')),
+    'service_account_credentials_json' => env('GOOGLE_SERVICE_ACCOUNT_CREDENTIALS', storage_path('app/analytics/service-account-credentials.json')),
 ];
