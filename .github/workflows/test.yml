@@ -1,0 +1,39 @@
+name: "Test"
+
+on:
+    push:
+        branches: [ master ]
+    pull_request:
+        branches: [ master ]
+
+jobs:
+    test-php-74:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v2
+            -   name: Start the test docker containers
+                run: docker-compose -f docker-compose-test.yml up -d
+            -   name: Install composer dependencies
+                run: docker-compose -f docker-compose-test.yml exec -T php_74 composer install
+            -   name: Run PHPUnit Tests
+                run: docker-compose -f docker-compose-test.yml exec -T php_74 composer test
+    test-php-80:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v2
+            -   name: Start the test docker containers
+                run: docker-compose -f docker-compose-test.yml up -d
+            -   name: Install composer dependencies
+                run: docker-compose -f docker-compose-test.yml exec -T php_80 composer install
+            -   name: Run PHPUnit Tests
+                run: docker-compose -f docker-compose-test.yml exec -T php_80 composer test
+    test-php-81:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v2
+            -   name: Start the test docker containers
+                run: docker-compose -f docker-compose-test.yml up -d
+            -   name: Install composer dependencies
+                run: docker-compose -f docker-compose-test.yml exec -T php_81 composer install
+            -   name: Run PHPUnit Tests
+                run: docker-compose -f docker-compose-test.yml exec -T php_81 composer test
