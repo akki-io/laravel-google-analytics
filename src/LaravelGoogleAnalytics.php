@@ -2,6 +2,11 @@
 
 namespace AkkiIo\LaravelGoogleAnalytics;
 
+use AkkiIo\LaravelGoogleAnalytics\Traits\CustomAcquisitionTrait;
+use AkkiIo\LaravelGoogleAnalytics\Traits\CustomDemographicsTrait;
+use AkkiIo\LaravelGoogleAnalytics\Traits\CustomEngagementTrait;
+use AkkiIo\LaravelGoogleAnalytics\Traits\CustomRetentionTrait;
+use AkkiIo\LaravelGoogleAnalytics\Traits\CustomTechTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\DateRangeTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\DimensionTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\FilterByDimensionTrait;
@@ -25,6 +30,11 @@ class LaravelGoogleAnalytics
     use FilterByDimensionTrait;
     use FilterByMetricTrait;
     use RowOperationTrait;
+    use CustomAcquisitionTrait;
+    use CustomEngagementTrait;
+    use CustomRetentionTrait;
+    use CustomDemographicsTrait;
+    use CustomTechTrait;
     use ResponseTrait;
 
     public ?int $propertyId = null;
@@ -45,7 +55,21 @@ class LaravelGoogleAnalytics
     }
 
     /**
-     * Set the client.
+     * Get the property id.
+     *
+     * @return int|null
+     */
+    public function getPropertyId(): ?int
+    {
+        if (! $this->propertyId) {
+            $this->setPropertyId();
+        }
+
+        return $this->propertyId;
+    }
+
+    /**
+     * Set the credentials.
      *
      * @param  null  $credentials
      * @return $this
@@ -58,6 +82,34 @@ class LaravelGoogleAnalytics
     }
 
     /**
+     * Get the credentials.
+     *
+     * @return mixed
+     */
+    public function getCredentials()
+    {
+        if (! $this->credentials) {
+            $this->setCredentials();
+        }
+
+        return $this->credentials;
+    }
+
+    /**
+     * Get the client.
+     *
+     * @return BetaAnalyticsDataClient
+     *
+     * @throws \Google\ApiCore\ValidationException
+     */
+    public function getClient(): BetaAnalyticsDataClient
+    {
+        return new BetaAnalyticsDataClient([
+            'credentials' => $this->getCredentials(),
+        ]);
+    }
+
+    /**
      * Get the result from the GA4 query explorer.
      *
      * @return LaravelGoogleAnalyticsResponse
@@ -66,20 +118,8 @@ class LaravelGoogleAnalytics
      */
     public function get(): LaravelGoogleAnalyticsResponse
     {
-        if (! $this->propertyId) {
-            $this->setPropertyId();
-        }
-
-        if (! $this->credentials) {
-            $this->setCredentials();
-        }
-
-        $client = new BetaAnalyticsDataClient([
-            'credentials' => $this->credentials,
-        ]);
-
-        $response = $client->runReport([
-            'property' => "properties/{$this->propertyId}",
+        $response = $this->getClient()->runReport([
+            'property' => "properties/{$this->getPropertyId()}",
             'dateRanges' => $this->dateRanges,
             'metrics' => $this->metrics,
             'dimensions' => $this->dimensions,

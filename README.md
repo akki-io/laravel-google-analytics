@@ -5,9 +5,11 @@
 # Laravel Google Analytics
 
 [![Latest Version](https://img.shields.io/github/release/akki-io/laravel-google-analytics.svg?style=flat-square)](https://github.com/akki-io/laravel-google-analytics/releases)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/akki-io/laravel-google-analytics/Test/master?style=flat-square)
 [![StyleCI](https://styleci.io/repos/441735142/shield?branch=master)](https://styleci.io/repos/441735142)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/akki-io/laravel-google-analytics.svg?style=flat-square)](https://packagist.org/packages/akki-io/laravel-google-analytics)
+
 
 A Laravel package to retrieve data from Google Analytics 4 using the GA4 Query Explorer
 
@@ -25,8 +27,9 @@ use Google\Analytics\Data\V1beta\Filter\StringFilter\MatchType;
 use Google\Analytics\Data\V1beta\MetricAggregation;
 use Google\Analytics\Data\V1beta\Filter\NumericFilter\Operation;
 
-// get the top 20 viewed pages for last 30 days
-LaravelGoogleAnalytics::getTopViewedPages(Period::days(30), $count = 20);
+// get the top 20 most viewed pages for last 30 days
+LaravelGoogleAnalytics::getMostViewsByPage(Period::days(30), $count = 20);
+LaravelGoogleAnalytics::getMostUsersByDate(Period::days(30), $count = 20);
 
 // build a query using the `get()` method
 LaravelGoogleAnalytics::dateRanges(Period::days(30), Period::days(60))
@@ -40,7 +43,7 @@ LaravelGoogleAnalytics::dateRanges(Period::days(30), Period::days(60))
 ```
 
 
-Please refer to the [wiki]((https://github.com/akki-io/laravel-google-analytics/wiki)) for more details.
+Please refer to the [wiki](https://github.com/akki-io/laravel-google-analytics/wiki) for more details.
 
 
 ## Contributing
@@ -55,6 +58,7 @@ If you discover any security related issues, please email hello@akki.io instead 
 
 - [Akki Khare](https://github.com/akki-io)
 - [All Contributors](../../contributors)
+- [spatie/laravel-analytics](https://github.com/spatie/laravel-analytics)
 
 ## License
 
