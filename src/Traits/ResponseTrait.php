@@ -44,14 +44,16 @@ trait ResponseTrait
 
         foreach ($aggregationMethods as $aggregationMethod) {
             foreach ($response->{$aggregationMethod}() as $row) {
-                $tableArray = [];
-                foreach ($row->getDimensionValues() as $key => $item) {
-                    $tableArray[$key === 0 ? 'aggregation' : $this->dimensionHeaders[$key]] = $item->getValue();
+                if ($row->getMetricValues()->count()) {
+                    $tableArray = [];
+                    foreach ($row->getDimensionValues() as $key => $item) {
+                        $tableArray[$key === 0 ? 'aggregation' : $this->dimensionHeaders[$key]] = $item->getValue();
+                    }
+                    foreach ($row->getMetricValues() as $key => $item) {
+                        $tableArray[$this->metricHeaders[$key]] = $item->getValue();
+                    }
+                    $output[] = $tableArray;
                 }
-                foreach ($row->getMetricValues() as $key => $item) {
-                    $tableArray[$this->metricHeaders[$key]] = $item->getValue();
-                }
-                $output[] = $tableArray;
             }
         }
 
