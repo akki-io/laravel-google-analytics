@@ -95,6 +95,7 @@ class LaravelGoogleAnalytics
      * Get the client.
      *
      * @return BetaAnalyticsDataClient
+     *
      * @throws \Google\ApiCore\ValidationException
      */
     public function getClient(): BetaAnalyticsDataClient

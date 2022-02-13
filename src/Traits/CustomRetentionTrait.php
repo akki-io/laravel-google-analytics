@@ -9,8 +9,9 @@ trait CustomRetentionTrait
     /**
      * Get total new and returning users.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -26,8 +27,9 @@ trait CustomRetentionTrait
     /**
      * Get total new and returning users by date.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */

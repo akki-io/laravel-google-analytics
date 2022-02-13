@@ -10,8 +10,9 @@ trait CustomEngagementTrait
     /**
      * Get average session durations in seconds.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return float
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -28,8 +29,9 @@ trait CustomEngagementTrait
     /**
      * Get average session durations in seconds by date.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -47,8 +49,9 @@ trait CustomEngagementTrait
     /**
      * Get total views.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return int
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -65,8 +68,9 @@ trait CustomEngagementTrait
     /**
      * Get total views by date.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -84,8 +88,9 @@ trait CustomEngagementTrait
     /**
      * Get total views by page.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -101,8 +106,9 @@ trait CustomEngagementTrait
     /**
      * Get total views by page and user.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -118,9 +124,10 @@ trait CustomEngagementTrait
     /**
      * Get most views by page.
      *
-     * @param Period $period
-     * @param int $count
+     * @param  Period  $period
+     * @param  int  $count
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */

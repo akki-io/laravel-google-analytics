@@ -10,8 +10,9 @@ trait CustomAcquisitionTrait
     /**
      * Get total users.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return int
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -28,8 +29,9 @@ trait CustomAcquisitionTrait
     /**
      * Get total users by date.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -47,8 +49,9 @@ trait CustomAcquisitionTrait
     /**
      * Get total users by session source.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -65,9 +68,10 @@ trait CustomAcquisitionTrait
     /**
      * Get total users by date.
      *
-     * @param Period $period
-     * @param int $count
+     * @param  Period  $period
+     * @param  int  $count
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -85,9 +89,10 @@ trait CustomAcquisitionTrait
     /**
      * Get total users by session source.
      *
-     * @param Period $period
-     * @param int $count
+     * @param  Period  $period
+     * @param  int  $count
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
