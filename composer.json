@@ -48,7 +48,7 @@
                 "AkkiIo\\LaravelGoogleAnalytics\\LaravelGoogleAnalyticsServiceProvider"
             ],
             "aliases": {
-                "LaravelGoogleAnalytics": "AkkiIo\\LaravelGoogleAnalytics\\Facade\\LaravelGoogleAnalytics"
+                "LaravelGoogleAnalytics": "AkkiIo\\LaravelGoogleAnalytics\\Facades\\LaravelGoogleAnalytics"
             }
         }
     }
