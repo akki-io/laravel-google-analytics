@@ -3,8 +3,10 @@
 namespace AkkiIo\LaravelGoogleAnalytics;
 
 use AkkiIo\LaravelGoogleAnalytics\Traits\CustomAcquisitionTrait;
+use AkkiIo\LaravelGoogleAnalytics\Traits\CustomDemographicsTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\CustomEngagementTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\CustomRetentionTrait;
+use AkkiIo\LaravelGoogleAnalytics\Traits\CustomTechTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\DateRangeTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\DimensionTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\FilterByDimensionTrait;
@@ -31,6 +33,8 @@ class LaravelGoogleAnalytics
     use CustomAcquisitionTrait;
     use CustomEngagementTrait;
     use CustomRetentionTrait;
+    use CustomDemographicsTrait;
+    use CustomTechTrait;
     use ResponseTrait;
 
     public ?int $propertyId = null;

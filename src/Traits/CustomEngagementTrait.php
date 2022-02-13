@@ -141,4 +141,25 @@ trait CustomEngagementTrait
             ->get()
             ->table;
     }
+
+    /**
+     * Get most views by user.
+     *
+     * @param  Period  $period
+     * @param  int  $count
+     * @return array
+     *
+     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ValidationException
+     */
+    public function getMostViewsByUser(Period $period, int $count = 20): array
+    {
+        return $this->dateRange($period)
+            ->metrics('totalUsers')
+            ->dimensions('pageTitle', 'fullPageUrl')
+            ->orderByMetricDesc('totalUsers')
+            ->limit($count)
+            ->get()
+            ->table;
+    }
 }
