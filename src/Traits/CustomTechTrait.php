@@ -9,8 +9,9 @@ trait CustomTechTrait
     /**
      * Get users by platform.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -27,8 +28,9 @@ trait CustomTechTrait
     /**
      * Get users by operating system.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -45,8 +47,9 @@ trait CustomTechTrait
     /**
      * Get users by browser.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -63,8 +66,9 @@ trait CustomTechTrait
     /**
      * Get users by screen resolution.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -81,9 +85,10 @@ trait CustomTechTrait
     /**
      * Get most users by platform.
      *
-     * @param Period $period
-     * @param int $count
+     * @param  Period  $period
+     * @param  int  $count
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -101,9 +106,10 @@ trait CustomTechTrait
     /**
      * Get most users by operating system.
      *
-     * @param Period $period
-     * @param int $count
+     * @param  Period  $period
+     * @param  int  $count
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -121,9 +127,10 @@ trait CustomTechTrait
     /**
      * Get most users by browser.
      *
-     * @param Period $period
-     * @param int $count
+     * @param  Period  $period
+     * @param  int  $count
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -141,9 +148,10 @@ trait CustomTechTrait
     /**
      * Get most users by screen resolution.
      *
-     * @param Period $period
-     * @param int $count
+     * @param  Period  $period
+     * @param  int  $count
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */

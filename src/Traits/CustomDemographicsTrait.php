@@ -9,8 +9,9 @@ trait CustomDemographicsTrait
     /**
      * Get users by country.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -27,8 +28,9 @@ trait CustomDemographicsTrait
     /**
      * Get users by city.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -45,8 +47,9 @@ trait CustomDemographicsTrait
     /**
      * Get users by gender.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -63,8 +66,9 @@ trait CustomDemographicsTrait
     /**
      * Get users by language.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -81,8 +85,9 @@ trait CustomDemographicsTrait
     /**
      * Get users by age.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -99,9 +104,10 @@ trait CustomDemographicsTrait
     /**
      * Get most users by country.
      *
-     * @param Period $period
-     * @param int $count
+     * @param  Period  $period
+     * @param  int  $count
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -119,9 +125,10 @@ trait CustomDemographicsTrait
     /**
      * Get most users by city.
      *
-     * @param Period $period
-     * @param int $count
+     * @param  Period  $period
+     * @param  int  $count
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -139,9 +146,10 @@ trait CustomDemographicsTrait
     /**
      * Get most users by language.
      *
-     * @param Period $period
-     * @param int $count
+     * @param  Period  $period
+     * @param  int  $count
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
@@ -159,9 +167,10 @@ trait CustomDemographicsTrait
     /**
      * Get most users by age.
      *
-     * @param Period $period
-     * @param int $count
+     * @param  Period  $period
+     * @param  int  $count
      * @return array
+     *
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
