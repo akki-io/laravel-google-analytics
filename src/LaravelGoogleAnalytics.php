@@ -47,7 +47,7 @@ class LaravelGoogleAnalytics
     /**
      * Set the client.
      *
-     * @param null $credentials
+     * @param  null  $credentials
      * @return $this
      */
     public function setCredentials($credentials = null): self

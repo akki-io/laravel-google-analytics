@@ -9,6 +9,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
     /**
      * Setup the test environment.
+     *
      * @throws \Google\ApiCore\ValidationException
      */
     protected function setUp(): void
@@ -35,7 +36,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
      * Get package providers.
      *
      * @param  \Illuminate\Foundation\Application  $app
-     *
      * @return array<int, class-string>
      */
     protected function getPackageProviders($app): array
@@ -49,7 +49,6 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
      * Define environment setup.
      *
      * @param  \Illuminate\Foundation\Application  $app
-     *
      * @return void
      */
     protected function getEnvironmentSetUp($app)
