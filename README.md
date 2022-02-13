@@ -27,8 +27,8 @@ use Google\Analytics\Data\V1beta\Filter\StringFilter\MatchType;
 use Google\Analytics\Data\V1beta\MetricAggregation;
 use Google\Analytics\Data\V1beta\Filter\NumericFilter\Operation;
 
-// get the top 20 viewed pages for last 30 days
-LaravelGoogleAnalytics::getTopViewedPages(Period::days(30), $count = 20);
+// get the top 20 most viewed pages for last 30 days
+LaravelGoogleAnalytics::getMostViewedPages(Period::days(30), $count = 20);
 
 // build a query using the `get()` method
 LaravelGoogleAnalytics::dateRanges(Period::days(30), Period::days(60))
@@ -57,6 +57,7 @@ If you discover any security related issues, please email hello@akki.io instead 
 
 - [Akki Khare](https://github.com/akki-io)
 - [All Contributors](../../contributors)
+- [spatie/laravel-analytics](https://github.com/spatie/laravel-analytics)
 
 ## License
 
