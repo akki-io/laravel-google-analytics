@@ -11,7 +11,7 @@ trait MetricTrait
     /**
      * Set the metric.
      *
-     * @param string $name
+     * @param  string  $name
      * @return $this
      */
     public function metric(string $name): self
@@ -25,7 +25,7 @@ trait MetricTrait
     /**
      * Set the metrics.
      *
-     * @param string ...$items
+     * @param  string  ...$items
      * @return $this
      */
     public function metrics(string ...$items): self

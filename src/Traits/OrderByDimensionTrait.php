@@ -2,16 +2,16 @@
 
 namespace AkkiIo\LaravelGoogleAnalytics\Traits;
 
-use Google\Analytics\Data\V1beta\OrderBy\DimensionOrderBy;
 use Google\Analytics\Data\V1beta\OrderBy;
+use Google\Analytics\Data\V1beta\OrderBy\DimensionOrderBy;
 
 trait OrderByDimensionTrait
 {
     /**
      * Set the order by dimension.
      *
-     * @param string $name
-     * @param string $order
+     * @param  string  $name
+     * @param  string  $order
      * @return $this
      */
     public function orderByDimension(string $name, string $order = 'ASC'): self
@@ -29,7 +29,7 @@ trait OrderByDimensionTrait
     /**
      * Set the desc order by dimension.
      *
-     * @param string $name
+     * @param  string  $name
      * @return $this
      */
     public function orderByDimensionDesc(string $name): self

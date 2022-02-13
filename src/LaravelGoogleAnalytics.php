@@ -48,7 +48,7 @@ class LaravelGoogleAnalytics
     /**
      * Set the property id.
      *
-     * @param null $propertyId
+     * @param  null  $propertyId
      * @return $this
      */
     public function propertyId($propertyId = null): self
@@ -62,6 +62,7 @@ class LaravelGoogleAnalytics
      * Get the result from the GA4 query explorer.
      *
      * @return LaravelGoogleAnalyticsResponse
+     *
      * @throws \Google\ApiCore\ApiException
      */
     public function get(): LaravelGoogleAnalyticsResponse

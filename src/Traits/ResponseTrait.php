@@ -13,7 +13,7 @@ trait ResponseTrait
     /**
      * Parse the output.
      *
-     * @param RunReportResponse $response
+     * @param  RunReportResponse  $response
      * @return LaravelGoogleAnalyticsResponse
      */
     private function formatResponse(RunReportResponse $response): LaravelGoogleAnalyticsResponse
@@ -29,7 +29,7 @@ trait ResponseTrait
     /**
      * Get the metric aggregations table.
      *
-     * @param RunReportResponse $response
+     * @param  RunReportResponse  $response
      * @return array
      */
     private function getMetricAggregationsTable(RunReportResponse $response): array
@@ -63,7 +63,7 @@ trait ResponseTrait
     /**
      * Get table collection.
      *
-     * @param RunReportResponse $response
+     * @param  RunReportResponse  $response
      * @return array
      */
     private function getTable(RunReportResponse $response): array
@@ -87,7 +87,7 @@ trait ResponseTrait
     /**
      * Set dimension and metric headers.
      *
-     * @param RunReportResponse $response
+     * @param  RunReportResponse  $response
      * @return void
      */
     private function setDimensionAndMetricHeaders(RunReportResponse $response)

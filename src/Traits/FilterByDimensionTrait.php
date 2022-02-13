@@ -14,10 +14,10 @@ trait FilterByDimensionTrait
     /**
      * Apply where dimension filter.
      *
-     * @param string $name
-     * @param int $matchType
-     * @param string|int $value
-     * @param bool $caseSensitive
+     * @param  string  $name
+     * @param  int  $matchType
+     * @param  string|int  $value
+     * @param  bool  $caseSensitive
      * @return $this
      */
     public function whereDimension(string $name, int $matchType, $value, bool $caseSensitive = false): self
@@ -38,9 +38,9 @@ trait FilterByDimensionTrait
     /**
      * Apply whereIn dimension filter.
      *
-     * @param string $name
-     * @param array $values
-     * @param bool $caseSensitive
+     * @param  string  $name
+     * @param  array  $values
+     * @param  bool  $caseSensitive
      * @return $this
      */
     public function whereDimensionIn(string $name, array $values, bool $caseSensitive = false): self

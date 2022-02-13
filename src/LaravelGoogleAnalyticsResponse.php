@@ -15,7 +15,7 @@ class LaravelGoogleAnalyticsResponse
     /**
      * Set google response.
      *
-     * @param RunReportResponse $googleResponse
+     * @param  RunReportResponse  $googleResponse
      * @return $this
      */
     public function setGoogleResponse(RunReportResponse $googleResponse): self
@@ -28,10 +28,10 @@ class LaravelGoogleAnalyticsResponse
     /**
      * Set the output as a table array.
      *
-     * @param array $table
+     * @param  array  $table
      * @return $this
      */
-    public function setTable(array $table):self
+    public function setTable(array $table): self
     {
         $this->table = $table;
 
@@ -41,10 +41,10 @@ class LaravelGoogleAnalyticsResponse
     /**
      * Set the metric aggregations output as a table array.
      *
-     * @param array $metricAggregationsTable
+     * @param  array  $metricAggregationsTable
      * @return $this
      */
-    public function setMetricAggregationsTable(array $metricAggregationsTable):self
+    public function setMetricAggregationsTable(array $metricAggregationsTable): self
     {
         $this->metricAggregationsTable = $metricAggregationsTable;
 

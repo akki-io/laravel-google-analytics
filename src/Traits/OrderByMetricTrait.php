@@ -10,8 +10,8 @@ trait OrderByMetricTrait
     /**
      * Set the order by metric.
      *
-     * @param string $name
-     * @param string $order
+     * @param  string  $name
+     * @param  string  $order
      * @return $this
      */
     public function orderByMetric(string $name, string $order = 'ASC'): self
@@ -29,7 +29,7 @@ trait OrderByMetricTrait
     /**
      * Set the desc order by metric.
      *
-     * @param string $name
+     * @param  string  $name
      * @return $this
      */
     public function orderByMetricDesc(string $name): self

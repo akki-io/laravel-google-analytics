@@ -9,7 +9,7 @@ trait MetricAggregationTrait
     /**
      * Set the metric aggregation.
      *
-     * @param int $value
+     * @param  int  $value
      * @return $this
      */
     public function metricAggregation(int $value): self
@@ -22,7 +22,7 @@ trait MetricAggregationTrait
     /**
      * Set the metric aggregations.
      *
-     * @param int ...$items
+     * @param  int  ...$items
      * @return $this
      */
     public function metricAggregations(int ...$items): self

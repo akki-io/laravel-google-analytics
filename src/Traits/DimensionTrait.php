@@ -11,7 +11,7 @@ trait DimensionTrait
     /**
      * Set the dimension.
      *
-     * @param string $name
+     * @param  string  $name
      * @return $this
      */
     public function dimension(string $name): self
@@ -25,7 +25,7 @@ trait DimensionTrait
     /**
      * Set the dimensions.
      *
-     * @param string ...$items
+     * @param  string  ...$items
      * @return $this
      */
     public function dimensions(string ...$items): self

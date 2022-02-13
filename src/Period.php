@@ -13,8 +13,9 @@ class Period
     /**
      * Period construct.
      *
-     * @param Carbon $startDate
-     * @param Carbon $endDate
+     * @param  Carbon  $startDate
+     * @param  Carbon  $endDate
+     *
      * @throws InvalidPeriod
      */
     public function __construct(Carbon $startDate, Carbon $endDate)
@@ -29,9 +30,10 @@ class Period
     /**
      * Create a period.
      *
-     * @param Carbon $startDate
-     * @param Carbon $endDate
+     * @param  Carbon  $startDate
+     * @param  Carbon  $endDate
      * @return static
+     *
      * @throws InvalidPeriod
      */
     public static function create(Carbon $startDate, Carbon $endDate): self
@@ -42,42 +44,48 @@ class Period
     /**
      * Create a period using days.
      *
-     * @param int $numberOfDays
+     * @param  int  $numberOfDays
      * @return static
+     *
      * @throws InvalidPeriod
      */
     public static function days(int $numberOfDays): Period
     {
         $endDate = Carbon::today();
         $startDate = Carbon::today()->subDays($numberOfDays)->startOfDay();
+
         return new static($startDate, $endDate);
     }
 
     /**
      * Create a period using months.
      *
-     * @param int $numberOfMonths
+     * @param  int  $numberOfMonths
      * @return static
+     *
      * @throws InvalidPeriod
      */
     public static function months(int $numberOfMonths): Period
     {
         $endDate = Carbon::today();
         $startDate = Carbon::today()->subMonths($numberOfMonths)->startOfDay();
+
         return new static($startDate, $endDate);
     }
 
     /**
      * Create a period using years.
      *
-     * @param int $numberOfYears
+     * @param  int  $numberOfYears
      * @return static
+     *
      * @throws InvalidPeriod
      */
     public static function years(int $numberOfYears): Period
     {
         $endDate = Carbon::today();
         $startDate = Carbon::today()->subYears($numberOfYears)->startOfDay();
+
         return new static($startDate, $endDate);
     }
 }

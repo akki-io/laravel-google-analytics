@@ -12,7 +12,7 @@ trait DateRangeTrait
     /**
      * Set the date Range.
      *
-     * @param Period $period
+     * @param  Period  $period
      * @return $this
      */
     public function dateRange(Period $period): self
@@ -27,7 +27,7 @@ trait DateRangeTrait
     /**
      * Set the date Ranges.
      *
-     * @param Period ...$items
+     * @param  Period  ...$items
      * @return $this
      */
     public function dateRanges(Period ...$items): self
