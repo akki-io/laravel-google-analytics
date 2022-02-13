@@ -27,23 +27,9 @@ class LaravelGoogleAnalytics
     use RowOperationTrait;
     use ResponseTrait;
 
-    public BetaAnalyticsDataClient $client;
-    public int $propertyId;
+    public ?int $propertyId = null;
+    public $credentials = null;
     public array $orderBys = [];
-
-    /**
-     * Class construct.
-     *
-     * @throws \Google\ApiCore\ValidationException
-     */
-    public function __construct()
-    {
-        $this->client = new BetaAnalyticsDataClient([
-            'credentials' => config('laravel-google-analytics.service_account_credentials_json'),
-        ]);
-
-        $this->propertyId();
-    }
 
     /**
      * Set the property id.
@@ -51,9 +37,22 @@ class LaravelGoogleAnalytics
      * @param  null  $propertyId
      * @return $this
      */
-    public function propertyId($propertyId = null): self
+    public function setPropertyId($propertyId = null): self
     {
         $this->propertyId = $propertyId ?? config('laravel-google-analytics.property_id');
+
+        return $this;
+    }
+
+    /**
+     * Set the client.
+     *
+     * @param null $credentials
+     * @return $this
+     */
+    public function setCredentials($credentials = null): self
+    {
+        $this->credentials = $credentials ?? config('laravel-google-analytics.service_account_credentials_json');
 
         return $this;
     }
@@ -63,11 +62,23 @@ class LaravelGoogleAnalytics
      *
      * @return LaravelGoogleAnalyticsResponse
      *
-     * @throws \Google\ApiCore\ApiException
+     * @throws \Google\ApiCore\ApiException|\Google\ApiCore\ValidationException
      */
     public function get(): LaravelGoogleAnalyticsResponse
     {
-        $response = $this->client->runReport([
+        if (! $this->propertyId) {
+            $this->setPropertyId();
+        }
+
+        if (! $this->credentials) {
+            $this->setCredentials();
+        }
+
+        $client = new BetaAnalyticsDataClient([
+            'credentials' => $this->credentials,
+        ]);
+
+        $response = $client->runReport([
             'property' => "properties/{$this->propertyId}",
             'dateRanges' => $this->dateRanges,
             'metrics' => $this->metrics,
