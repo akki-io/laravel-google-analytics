@@ -6,3 +6,4 @@ coverage
 .idea
 .phpunit.result.cache
 .env
+.env.test
