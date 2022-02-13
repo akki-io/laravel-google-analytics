@@ -1,0 +1,55 @@
+{
+    "name": "akki-io/laravel-google-analytics",
+    "description": "A Laravel package to retrieve data from Google Analytics 4 using the GA4 Query Explorer",
+    "keywords": [
+        "akki-io",
+        "laravel-google-analytics"
+    ],
+    "homepage": "https://github.com/akki-io/laravel-google-analytics",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Akki Khare",
+            "email": "hello@akki.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "google/analytics-data": "^0.8.0",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AkkiIo\\LaravelGoogleAnalytics\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AkkiIo\\LaravelGoogleAnalytics\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AkkiIo\\LaravelGoogleAnalytics\\LaravelGoogleAnalyticsServiceProvider"
+            ],
+            "aliases": {
+                "LaravelGoogleAnalytics": "AkkiIo\\LaravelGoogleAnalytics\\Facade\\LaravelGoogleAnalytics"
+            }
+        }
+    }
+}
