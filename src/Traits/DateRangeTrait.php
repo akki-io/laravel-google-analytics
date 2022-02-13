@@ -7,6 +7,8 @@ use Google\Analytics\Data\V1beta\DateRange;
 
 trait DateRangeTrait
 {
+    public array $dateRanges = [];
+
     /**
      * Set the date Range.
      *

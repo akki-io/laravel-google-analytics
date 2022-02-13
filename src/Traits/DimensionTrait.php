@@ -6,6 +6,8 @@ use Google\Analytics\Data\V1beta\Dimension;
 
 trait DimensionTrait
 {
+    public array $dimensions = [];
+
     /**
      * Set the dimension.
      *

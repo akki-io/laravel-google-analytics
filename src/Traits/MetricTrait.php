@@ -6,6 +6,8 @@ use Google\Analytics\Data\V1beta\Metric;
 
 trait MetricTrait
 {
+    public array $metrics = [];
+
     /**
      * Set the metric.
      *

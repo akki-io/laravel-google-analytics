@@ -4,6 +4,7 @@ namespace AkkiIo\LaravelGoogleAnalytics;
 
 use AkkiIo\LaravelGoogleAnalytics\Traits\DateRangeTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\DimensionTrait;
+use AkkiIo\LaravelGoogleAnalytics\Traits\MetricAggregationTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\MetricTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\OrderByDimensionTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\OrderByMetricTrait;
@@ -17,14 +18,12 @@ class LaravelGoogleAnalytics
     use DimensionTrait;
     use OrderByMetricTrait;
     use OrderByDimensionTrait;
+    use MetricAggregationTrait;
     use ResponseTrait;
 
     public BetaAnalyticsDataClient $client;
     public int $propertyId;
-    public array $dateRanges;
-    public array $dimensions;
-    public array $metrics;
-    public array $orderBys;
+    public array $orderBys = [];
 
     /**
      * Class construct.
@@ -38,10 +37,6 @@ class LaravelGoogleAnalytics
         ]);
 
         $this->propertyId();
-        $this->dateRanges = [];
-        $this->dimensions = [];
-        $this->metrics = [];
-        $this->orderBys = [];
     }
 
     /**
@@ -71,6 +66,7 @@ class LaravelGoogleAnalytics
             'metrics' => $this->metrics,
             'dimensions' => $this->dimensions,
             'orderBys' => $this->orderBys,
+            'metricAggregations' => $this->metricAggregations,
         ]);
 
         return $this->formatResponse($response);
