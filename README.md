@@ -29,7 +29,9 @@ use Google\Analytics\Data\V1beta\Filter\NumericFilter\Operation;
 
 // get the top 20 most viewed pages for last 30 days
 LaravelGoogleAnalytics::getMostViewsByPage(Period::days(30), $count = 20);
-LaravelGoogleAnalytics::getMostUsersByDate(Period::days(30), $count = 20);
+
+// get the top 20 dates with most users for last 12 months
+LaravelGoogleAnalytics::getMostUsersByDate(Period::months(12), $count = 20);
 
 // build a query using the `get()` method
 LaravelGoogleAnalytics::dateRanges(Period::days(30), Period::days(60))
