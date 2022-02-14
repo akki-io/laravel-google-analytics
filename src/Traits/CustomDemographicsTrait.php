@@ -7,7 +7,7 @@ use AkkiIo\LaravelGoogleAnalytics\Period;
 trait CustomDemographicsTrait
 {
     /**
-     * Get users by country.
+     * Get total users by country.
      *
      * @param  Period  $period
      * @return array
@@ -15,7 +15,7 @@ trait CustomDemographicsTrait
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getUsersByCountry(Period $period): array
+    public function getTotalUsersByCountry(Period $period): array
     {
         return $this->dateRange($period)
             ->metrics('totalUsers')
@@ -26,7 +26,7 @@ trait CustomDemographicsTrait
     }
 
     /**
-     * Get users by city.
+     * Get total users by city.
      *
      * @param  Period  $period
      * @return array
@@ -34,7 +34,7 @@ trait CustomDemographicsTrait
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getUsersByCity(Period $period): array
+    public function getTotalUsersByCity(Period $period): array
     {
         return $this->dateRange($period)
             ->metrics('totalUsers')
@@ -45,7 +45,7 @@ trait CustomDemographicsTrait
     }
 
     /**
-     * Get users by gender.
+     * Get total users by gender.
      *
      * @param  Period  $period
      * @return array
@@ -53,7 +53,7 @@ trait CustomDemographicsTrait
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getUsersByGender(Period $period): array
+    public function getTotalUsersByGender(Period $period): array
     {
         return $this->dateRange($period)
             ->metrics('totalUsers')
@@ -64,7 +64,7 @@ trait CustomDemographicsTrait
     }
 
     /**
-     * Get users by language.
+     * Get total users by language.
      *
      * @param  Period  $period
      * @return array
@@ -72,7 +72,7 @@ trait CustomDemographicsTrait
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getUsersByLanguage(Period $period): array
+    public function getTotalUsersByLanguage(Period $period): array
     {
         return $this->dateRange($period)
             ->metrics('totalUsers')
@@ -83,7 +83,7 @@ trait CustomDemographicsTrait
     }
 
     /**
-     * Get users by age.
+     * Get total users by age.
      *
      * @param  Period  $period
      * @return array
@@ -91,7 +91,7 @@ trait CustomDemographicsTrait
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getUsersByAge(Period $period): array
+    public function getTotalUsersByAge(Period $period): array
     {
         return $this->dateRange($period)
             ->metrics('totalUsers')
