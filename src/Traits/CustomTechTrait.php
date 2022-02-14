@@ -7,7 +7,7 @@ use AkkiIo\LaravelGoogleAnalytics\Period;
 trait CustomTechTrait
 {
     /**
-     * Get users by platform.
+     * Get total users by platform.
      *
      * @param  Period  $period
      * @return array
@@ -15,7 +15,7 @@ trait CustomTechTrait
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getUserByPlatform(Period $period): array
+    public function getTotalUsersByPlatform(Period $period): array
     {
         return $this->dateRange($period)
             ->metrics('totalUsers')
@@ -26,7 +26,7 @@ trait CustomTechTrait
     }
 
     /**
-     * Get users by operating system.
+     * Get total users by operating system.
      *
      * @param  Period  $period
      * @return array
@@ -34,7 +34,7 @@ trait CustomTechTrait
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getUserByOperatingSystem(Period $period): array
+    public function getTotalUsersByOperatingSystem(Period $period): array
     {
         return $this->dateRange($period)
             ->metrics('totalUsers')
@@ -45,7 +45,7 @@ trait CustomTechTrait
     }
 
     /**
-     * Get users by browser.
+     * Get total users by browser.
      *
      * @param  Period  $period
      * @return array
@@ -53,7 +53,7 @@ trait CustomTechTrait
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getUserByBrowser(Period $period): array
+    public function getTotalUsersByBrowser(Period $period): array
     {
         return $this->dateRange($period)
             ->metrics('totalUsers')
@@ -64,7 +64,7 @@ trait CustomTechTrait
     }
 
     /**
-     * Get users by screen resolution.
+     * Get total users by screen resolution.
      *
      * @param  Period  $period
      * @return array
@@ -72,7 +72,7 @@ trait CustomTechTrait
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getUserByScreenResolution(Period $period): array
+    public function getTotalUsersByScreenResolution(Period $period): array
     {
         return $this->dateRange($period)
             ->metrics('totalUsers')
@@ -92,7 +92,7 @@ trait CustomTechTrait
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getMostUserByPlatform(Period $period, int $count = 20): array
+    public function getMostUsersByPlatform(Period $period, int $count = 20): array
     {
         return $this->dateRange($period)
             ->metrics('totalUsers')
@@ -113,7 +113,7 @@ trait CustomTechTrait
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getMostUserByOperatingSystem(Period $period, int $count = 20): array
+    public function getMostUsersByOperatingSystem(Period $period, int $count = 20): array
     {
         return $this->dateRange($period)
             ->metrics('totalUsers')
@@ -134,7 +134,7 @@ trait CustomTechTrait
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getMostUserByBrowser(Period $period, int $count = 20): array
+    public function getMostUsersByBrowser(Period $period, int $count = 20): array
     {
         return $this->dateRange($period)
             ->metrics('totalUsers')
@@ -155,7 +155,7 @@ trait CustomTechTrait
      * @throws \Google\ApiCore\ApiException
      * @throws \Google\ApiCore\ValidationException
      */
-    public function getMostUserByScreenResolution(Period $period, int $count = 20): array
+    public function getMostUsersByScreenResolution(Period $period, int $count = 20): array
     {
         return $this->dateRange($period)
             ->metrics('totalUsers')
