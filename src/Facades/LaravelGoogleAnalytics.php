@@ -77,6 +77,8 @@ class LaravelGoogleAnalytics extends Facade
      */
     protected static function getFacadeAccessor(): string
     {
-        return 'laravel-google-analytics';
+        self::clearResolvedInstance(\AkkiIo\LaravelGoogleAnalytics\LaravelGoogleAnalytics::class);
+
+        return \AkkiIo\LaravelGoogleAnalytics\LaravelGoogleAnalytics::class;
     }
 }
