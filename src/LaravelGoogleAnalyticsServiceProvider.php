@@ -25,10 +25,5 @@ class LaravelGoogleAnalyticsServiceProvider extends ServiceProvider
     {
         // Automatically apply the package configuration
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'laravel-google-analytics');
-
-        // Register the main class to use with the facade
-        $this->app->singleton('laravel-google-analytics', function () {
-            return new LaravelGoogleAnalytics;
-        });
     }
 }
