@@ -10,7 +10,7 @@ use Google\Analytics\Data\V1beta\FilterExpressionList;
 
 trait FilterByDimensionTrait
 {
-    public $dimensionFilter = null;
+    public ?FilterExpression $dimensionFilter = null;
 
     /**
      * Apply where dimension filter.
