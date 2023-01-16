@@ -90,4 +90,30 @@ class LaravelGoogleAnalyticsTest extends TestCase
 
         $this->assertCount(3, $result->table);
     }
+
+    /** @test */
+    public function it_should_filter_dimension_with_and_group()
+    {
+        $result = $this->analytics
+            ->whereAndGroupDimensions([
+                ['browser', MatchType::CONTAINS, 'firefox'],
+                ['browser', MatchType::CONTAINS, 'chrome'],
+            ])
+            ->get();
+
+        $this->assertCount(0, $result->table);
+    }
+
+    /** @test */
+    public function it_should_filter_dimension_with_or_group()
+    {
+        $result = $this->analytics
+            ->whereOrGroupDimensions([
+                ['browser', MatchType::CONTAINS, 'firefox'],
+                ['browser', MatchType::CONTAINS, 'chrome'],
+            ])
+            ->get();
+
+        $this->assertCount(18, $result->table);
+    }
 }
