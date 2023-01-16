@@ -7,3 +7,4 @@ coverage
 .phpunit.result.cache
 .env
 .env.test
+run_tests.sh
