@@ -61,7 +61,7 @@ trait FilterByDimensionTrait
     /**
      * Apply where dimension filter using 'and_group'.
      *
-     * @param array $dimensions
+     * @param  array  $dimensions
      * @return $this
      */
     public function whereAndGroupDimensions($dimensions): self
@@ -79,7 +79,7 @@ trait FilterByDimensionTrait
     /**
      * Apply where dimension filter using 'or_group'.
      *
-     * @param array $dimensions
+     * @param  array  $dimensions
      * @return $this
      */
     public function whereOrGroupDimensions($dimensions): self
@@ -97,7 +97,7 @@ trait FilterByDimensionTrait
     /**
      * Create an array of dimension filters.
      *
-     * @param array $dimensions
+     * @param  array  $dimensions
      * @return void
      */
     protected function createDimensionGroup($dimensions): array
