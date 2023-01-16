@@ -97,7 +97,7 @@ class LaravelGoogleAnalyticsTest extends TestCase
         $result = $this->analytics
             ->whereAndGroupDimensions([
                 ['browser', MatchType::CONTAINS, 'firefox'],
-                ['browser', MatchType::CONTAINS, 'chrome']
+                ['browser', MatchType::CONTAINS, 'chrome'],
             ])
             ->get();
 
@@ -110,7 +110,7 @@ class LaravelGoogleAnalyticsTest extends TestCase
         $result = $this->analytics
             ->whereOrGroupDimensions([
                 ['browser', MatchType::CONTAINS, 'firefox'],
-                ['browser', MatchType::CONTAINS, 'chrome']
+                ['browser', MatchType::CONTAINS, 'chrome'],
             ])
             ->get();
 
