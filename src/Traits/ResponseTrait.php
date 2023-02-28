@@ -3,6 +3,7 @@
 namespace AkkiIo\LaravelGoogleAnalytics\Traits;
 
 use AkkiIo\LaravelGoogleAnalytics\LaravelGoogleAnalyticsResponse;
+use Google\Analytics\Data\V1beta\RunRealtimeReportResponse;
 use Google\Analytics\Data\V1beta\RunReportResponse;
 
 trait ResponseTrait
@@ -16,7 +17,7 @@ trait ResponseTrait
      * @param  RunReportResponse  $response
      * @return LaravelGoogleAnalyticsResponse
      */
-    private function formatResponse(RunReportResponse $response): LaravelGoogleAnalyticsResponse
+    private function formatResponse(RunReportResponse|RunRealtimeReportResponse $response): LaravelGoogleAnalyticsResponse
     {
         $this->setDimensionAndMetricHeaders($response);
 
@@ -32,7 +33,7 @@ trait ResponseTrait
      * @param  RunReportResponse  $response
      * @return array
      */
-    private function getMetricAggregationsTable(RunReportResponse $response): array
+    private function getMetricAggregationsTable(RunReportResponse|RunRealtimeReportResponse $response): array
     {
         $output = [];
 
@@ -63,10 +64,10 @@ trait ResponseTrait
     /**
      * Get table collection.
      *
-     * @param  RunReportResponse  $response
+     * @param RunReportResponse|RunRealtimeReportResponse $response
      * @return array
      */
-    private function getTable(RunReportResponse $response): array
+    private function getTable(RunReportResponse|RunRealtimeReportResponse $response): array
     {
         $output = [];
 
@@ -90,7 +91,7 @@ trait ResponseTrait
      * @param  RunReportResponse  $response
      * @return void
      */
-    private function setDimensionAndMetricHeaders(RunReportResponse $response)
+    private function setDimensionAndMetricHeaders(RunReportResponse|RunRealtimeReportResponse $response): void
     {
         foreach ($response->getDimensionHeaders() as $header) {
             $this->dimensionHeaders[] = $header->getName();

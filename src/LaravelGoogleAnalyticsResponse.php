@@ -2,11 +2,12 @@
 
 namespace AkkiIo\LaravelGoogleAnalytics;
 
+use Google\Analytics\Data\V1beta\RunRealtimeReportResponse;
 use Google\Analytics\Data\V1beta\RunReportResponse;
 
 class LaravelGoogleAnalyticsResponse
 {
-    public RunReportResponse $googleResponse;
+    public RunReportResponse|RunRealtimeReportResponse $googleResponse;
 
     public array $table;
 
@@ -15,10 +16,10 @@ class LaravelGoogleAnalyticsResponse
     /**
      * Set google response.
      *
-     * @param  RunReportResponse  $googleResponse
+     * @param RunReportResponse|RunRealtimeReportResponse $googleResponse
      * @return $this
      */
-    public function setGoogleResponse(RunReportResponse $googleResponse): self
+    public function setGoogleResponse(RunReportResponse|RunRealtimeReportResponse $googleResponse): self
     {
         $this->googleResponse = $googleResponse;
 

@@ -2,6 +2,7 @@
 
 namespace AkkiIo\LaravelGoogleAnalytics\Traits;
 
+use AkkiIo\LaravelGoogleAnalytics\LaravelGoogleAnalytics;
 use AkkiIo\LaravelGoogleAnalytics\Period;
 use Google\Analytics\Data\V1beta\DateRange;
 
@@ -27,8 +28,8 @@ trait DateRangeTrait
     /**
      * Set the date Ranges.
      *
-     * @param  Period  ...$items
-     * @return $this
+     * @param Period ...$items
+     * @return LaravelGoogleAnalytics|DateRangeTrait
      */
     public function dateRanges(Period ...$items): self
     {

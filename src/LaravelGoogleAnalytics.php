@@ -13,11 +13,14 @@ use AkkiIo\LaravelGoogleAnalytics\Traits\FilterByDimensionTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\FilterByMetricTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\MetricAggregationTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\MetricTrait;
+use AkkiIo\LaravelGoogleAnalytics\Traits\MinuteRangeTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\OrderByDimensionTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\OrderByMetricTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\ResponseTrait;
 use AkkiIo\LaravelGoogleAnalytics\Traits\RowOperationTrait;
 use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
+use Google\ApiCore\ApiException;
+use Google\ApiCore\ValidationException;
 
 class LaravelGoogleAnalytics
 {
@@ -36,7 +39,7 @@ class LaravelGoogleAnalytics
     use CustomDemographicsTrait;
     use CustomTechTrait;
     use ResponseTrait;
-
+    use MinuteRangeTrait;
     public ?int $propertyId = null;
     public $credentials = null;
     public array $orderBys = [];
@@ -133,5 +136,30 @@ class LaravelGoogleAnalytics
         ]);
 
         return $this->formatResponse($response);
+    }
+
+    /**
+     * @throws ValidationException
+     * @throws ApiException
+     */
+    public function getRealTimeReport(): LaravelGoogleAnalyticsResponse
+    {
+
+        $response = $this->getClient()->runRealtimeReport([
+            'property' => "properties/{$this->getPropertyId()}",
+            'minuteRanges' => $this->minuteRanges,
+            'metrics' => $this->metrics,
+            'dimensions' => $this->dimensions,
+            'orderBys' => $this->orderBys,
+            'metricAggregations' => $this->metricAggregations,
+            'dimensionFilter' => $this->dimensionFilter,
+            'metricFilter' => $this->metricFilter,
+            'limit' => $this->limit,
+            'offset' => $this->offset,
+            'keepEmptyRows' => $this->keepEmptyRows,
+        ]);
+
+        return $this->formatResponse($response);
+
     }
 }
