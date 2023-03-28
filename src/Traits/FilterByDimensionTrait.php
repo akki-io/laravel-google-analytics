@@ -105,13 +105,21 @@ trait FilterByDimensionTrait
         $filterExpressionList = [];
 
         foreach ($dimensions as $dimension) {
-            $stringFilter = (new StringFilter())->setCaseSensitive($dimension[3] ?? false)
-                ->setMatchType($dimension[1])
-                ->setValue($dimension[2]);
+            if($dimension instanceof Filter){
+                $filterExpressionList[] = (new FilterExpression())->setFilter($dimension);
+                continue;
+            }
 
-            $filter = (new Filter())->setStringFilter($stringFilter)->setFieldName($dimension[0]);
+            if(is_array($dimension)){
+                $stringFilter = (new StringFilter())->setCaseSensitive($dimension[3] ?? false)
+                    ->setMatchType($dimension[1])
+                    ->setValue($dimension[2]);
 
-            $filterExpressionList[] = (new FilterExpression())->setFilter($filter);
+                $filter = (new Filter())->setStringFilter($stringFilter)->setFieldName($dimension[0]);
+                $filterExpressionList[] = (new FilterExpression())->setFilter($filter);
+            }
+
+            // TODO: Throw and invalid dimension exception?
         }
 
         return $filterExpressionList;
