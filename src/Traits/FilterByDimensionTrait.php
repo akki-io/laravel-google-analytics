@@ -105,12 +105,12 @@ trait FilterByDimensionTrait
         $filterExpressionList = [];
 
         foreach ($dimensions as $dimension) {
-            if($dimension instanceof Filter){
+            if ($dimension instanceof Filter) {
                 $filterExpressionList[] = (new FilterExpression())->setFilter($dimension);
                 continue;
             }
 
-            if(is_array($dimension)){
+            if (is_array($dimension)) {
                 $stringFilter = (new StringFilter())->setCaseSensitive($dimension[3] ?? false)
                     ->setMatchType($dimension[1])
                     ->setValue($dimension[2]);

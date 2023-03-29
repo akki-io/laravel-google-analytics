@@ -122,11 +122,11 @@ class LaravelGoogleAnalyticsTest extends TestCase
     /** @test */
     public function it_should_filter_dimension_with_and_group_receiving_an_filter_object()
     {
-        $inListFilter = (new InListFilter())->setValues(["firefox","chrome"]);
-        $browserFilter = (new Filter())->setInListFilter($inListFilter)->setFieldName("browser");
+        $inListFilter = (new InListFilter())->setValues(['firefox', 'chrome']);
+        $browserFilter = (new Filter())->setInListFilter($inListFilter)->setFieldName('browser');
         $result = $this->analytics
             ->whereAndGroupDimensions([
-                $browserFilter
+                $browserFilter,
                 //Not sure which other metric is available, but can be something like ['country', MatchType::CONTAINS, 'India']
             ])
             ->get();
