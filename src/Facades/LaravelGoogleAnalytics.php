@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static self metricAggregations(int ...$items)
  * @method static self whereDimension(string $name, int $matchType,  $value, bool $caseSensitive = false)
  * @method static self whereDimensionIn(string $name, array $values, bool $caseSensitive = false)
+ * @method static self whereAndGroupDimensions(array $dimensions)
  * @method static self whereMetric(string $name, int $operation,  $value)
  * @method static self whereMetricBetween(string $name,  $from,  $to)
  * @method static \Google\Analytics\Data\V1beta\NumericValue getNumericObject( $value)

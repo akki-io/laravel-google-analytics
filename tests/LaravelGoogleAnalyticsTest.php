@@ -4,6 +4,8 @@ namespace AkkiIo\LaravelGoogleAnalytics\Tests;
 
 use AkkiIo\LaravelGoogleAnalytics\Facades\LaravelGoogleAnalytics;
 use AkkiIo\LaravelGoogleAnalytics\Period;
+use Google\Analytics\Data\V1beta\Filter;
+use Google\Analytics\Data\V1beta\Filter\InListFilter;
 use Google\Analytics\Data\V1beta\Filter\NumericFilter\Operation;
 use Google\Analytics\Data\V1beta\Filter\StringFilter\MatchType;
 use Google\Analytics\Data\V1beta\MetricAggregation;
@@ -111,6 +113,21 @@ class LaravelGoogleAnalyticsTest extends TestCase
             ->whereOrGroupDimensions([
                 ['browser', MatchType::CONTAINS, 'firefox'],
                 ['browser', MatchType::CONTAINS, 'chrome'],
+            ])
+            ->get();
+
+        $this->assertCount(18, $result->table);
+    }
+
+    /** @test */
+    public function it_should_filter_dimension_with_and_group_receiving_an_filter_object()
+    {
+        $inListFilter = (new InListFilter())->setValues(["firefox","chrome"]);
+        $browserFilter = (new Filter())->setInListFilter($inListFilter)->setFieldName("browser");
+        $result = $this->analytics
+            ->whereAndGroupDimensions([
+                $browserFilter
+                //Not sure which other metric is available, but can be something like ['country', MatchType::CONTAINS, 'India']
             ])
             ->get();
 
