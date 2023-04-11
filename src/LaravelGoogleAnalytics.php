@@ -44,7 +44,7 @@ class LaravelGoogleAnalytics
     /**
      * Set the property id.
      *
-     * @param  null  $propertyId
+     * @param  int|null  $propertyId
      * @return $this
      */
     public function setPropertyId($propertyId = null): self
