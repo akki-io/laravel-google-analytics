@@ -64,7 +64,7 @@ trait ResponseTrait
     /**
      * Get table collection.
      *
-     * @param RunReportResponse|RunRealtimeReportResponse $response
+     * @param  RunReportResponse|RunRealtimeReportResponse  $response
      * @return array
      */
     private function getTable(RunReportResponse|RunRealtimeReportResponse $response): array
