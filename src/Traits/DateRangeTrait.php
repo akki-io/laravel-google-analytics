@@ -28,7 +28,7 @@ trait DateRangeTrait
     /**
      * Set the date Ranges.
      *
-     * @param Period ...$items
+     * @param  Period  ...$items
      * @return LaravelGoogleAnalytics|DateRangeTrait
      */
     public function dateRanges(Period ...$items): self

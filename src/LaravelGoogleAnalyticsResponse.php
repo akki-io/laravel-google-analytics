@@ -16,7 +16,7 @@ class LaravelGoogleAnalyticsResponse
     /**
      * Set google response.
      *
-     * @param RunReportResponse|RunRealtimeReportResponse $googleResponse
+     * @param  RunReportResponse|RunRealtimeReportResponse  $googleResponse
      * @return $this
      */
     public function setGoogleResponse(RunReportResponse|RunRealtimeReportResponse $googleResponse): self

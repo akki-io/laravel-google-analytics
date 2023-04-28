@@ -144,7 +144,6 @@ class LaravelGoogleAnalytics
      */
     public function getRealTimeReport(): LaravelGoogleAnalyticsResponse
     {
-
         $response = $this->getClient()->runRealtimeReport([
             'property' => "properties/{$this->getPropertyId()}",
             'minuteRanges' => $this->minuteRanges,
@@ -160,6 +159,5 @@ class LaravelGoogleAnalytics
         ]);
 
         return $this->formatResponse($response);
-
     }
 }
