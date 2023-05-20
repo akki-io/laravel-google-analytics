@@ -41,7 +41,6 @@ class LaravelGoogleAnalyticsTest extends TestCase
                 ->dimension('city')
                 ->getRealTimeReport();
 
-
         $this->assertCount(0, $result->table);
     }
 
