@@ -34,6 +34,17 @@ class LaravelGoogleAnalyticsTest extends TestCase
     }
 
     /** @test */
+    public function it_should_get_real_time_report()
+    {
+        $result = LaravelGoogleAnalytics::metrics('activeUsers')
+                ->minuteRange(1)
+                ->dimension('city')
+                ->getRealTimeReport();
+
+        $this->assertCount(0, $result->table);
+    }
+
+    /** @test */
     public function it_should_return_correct_count()
     {
         $result = $this->analytics->get();
@@ -127,7 +138,6 @@ class LaravelGoogleAnalyticsTest extends TestCase
         $result = $this->analytics
             ->whereAndGroupDimensions([
                 $browserFilter,
-                //Not sure which other metric is available, but can be something like ['country', MatchType::CONTAINS, 'India']
             ])
             ->get();
 
