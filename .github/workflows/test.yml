@@ -7,20 +7,6 @@ on:
         branches: [ master ]
 
 jobs:
-    test-php-74:
-        runs-on: ubuntu-latest
-        steps:
-            -   uses: actions/checkout@v2
-            -   name: Decrypt large secret
-                run: ./.github/scripts/decrypt_secret.sh
-                env:
-                    LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
-            -   name: Start the test docker containers
-                run: docker-compose -f docker-compose-test.yml up -d
-            -   name: Install composer dependencies
-                run: docker-compose -f docker-compose-test.yml exec -T php_74 composer install
-            -   name: Run PHPUnit Tests
-                run: docker-compose -f docker-compose-test.yml exec -T php_74 composer test
     test-php-80:
         runs-on: ubuntu-latest
         steps:
@@ -49,3 +35,17 @@ jobs:
                 run: docker-compose -f docker-compose-test.yml exec -T php_81 composer install
             -   name: Run PHPUnit Tests
                 run: docker-compose -f docker-compose-test.yml exec -T php_81 composer test
+    test-php-82:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@v2
+            -   name: Decrypt large secret
+                run: ./.github/scripts/decrypt_secret.sh
+                env:
+                    LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
+            -   name: Start the test docker containers
+                run: docker-compose -f docker-compose-test.yml up -d
+            -   name: Install composer dependencies
+                run: docker-compose -f docker-compose-test.yml exec -T php_82 composer install
+            -   name: Run PHPUnit Tests
+                run: docker-compose -f docker-compose-test.yml exec -T php_82 composer test

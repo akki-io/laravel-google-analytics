@@ -1,17 +1,19 @@
 version: '2.1'
 
 services:
-    php_74:
-        image: akkica/laravel-base:7.4
-        volumes:
-            - .:/var/www/html
-            - /var/www/html/vendor
     php_80:
         image: akkica/laravel-base:8.0
         volumes:
             - .:/var/www/html
             - /var/www/html/vendor
+
     php_81:
+        image: akkica/laravel-base:8.1
+        volumes:
+            - .:/var/www/html
+            - /var/www/html/vendor
+
+    php_82:
         image: akkica/laravel-base:8.1
         volumes:
             - .:/var/www/html
