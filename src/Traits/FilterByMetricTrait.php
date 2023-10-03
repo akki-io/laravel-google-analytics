@@ -60,7 +60,7 @@ trait FilterByMetricTrait
     /**
      * Get numeric object from value.
      *
-     * @param $value
+     * @param  $value
      * @return NumericValue
      */
     private function getNumericObject($value): NumericValue
