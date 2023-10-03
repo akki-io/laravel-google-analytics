@@ -95,6 +95,27 @@ trait FilterByDimensionTrait
     }
 
     /**
+     * Apply whereNot dimension filter.
+     *
+     * @return $this
+     */
+    public function whereNotDimension(string $name, int $matchType, $value, bool $caseSensitive = false): self
+    {
+        $stringFilter = (new StringFilter())->setCaseSensitive($caseSensitive)
+            ->setMatchType($matchType)
+            ->setValue($value);
+
+        $filter = (new Filter())->setStringFilter($stringFilter)
+            ->setFieldName($name);
+
+        $this->dimensionFilter = (new FilterExpression())->setNotExpression(
+            (new FilterExpression())->setFilter($filter)
+        );
+
+        return $this;
+    }
+
+    /**
      * Create an array of dimension filters.
      *
      * @param  array  $dimensions
