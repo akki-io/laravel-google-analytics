@@ -143,4 +143,14 @@ class LaravelGoogleAnalyticsTest extends TestCase
 
         $this->assertCount(18, $result->table);
     }
+
+    /** @test */
+    public function it_should_filter_where_not_dimension()
+    {
+        $result = $this->analytics
+            ->whereNotDimension('browser', MatchType::CONTAINS, 'firefox')
+            ->get();
+
+        $this->assertCount(54, $result->table);
+    }
 }
