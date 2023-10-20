@@ -14,7 +14,7 @@ services:
             - /var/www/html/vendor
 
     php_82:
-        image: akkica/laravel-base:8.1
+        image: akkica/laravel-base:8.2
         volumes:
             - .:/var/www/html
             - /var/www/html/vendor
