@@ -31,7 +31,7 @@ trait RowOperationTrait
      * @param  int|null  $limit
      * @return $this
      */
-    public function limit(int $limit = null): self
+    public function limit(?int $limit = null): self
     {
         $this->limit = $limit;
 
@@ -44,7 +44,7 @@ trait RowOperationTrait
      * @param  int|null  $offset
      * @return $this
      */
-    public function offset(int $offset = null): self
+    public function offset(?int $offset = null): self
     {
         $this->offset = $offset;
 
